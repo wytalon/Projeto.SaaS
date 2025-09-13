@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sua Empresa de Planilhas - Soluções para Negócios</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            @apply bg-gray-50 text-gray-800;
+        }
+        .text-gradient {
+            background-image: linear-gradient(to right, #4F46E5, #9333EA);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .product-page {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#" class="flex items-center space-x-2" id="home-link">
+                <img src="https://placehold.co/48x48/4F46E5/ffffff?text=Logo" alt="Logo da SuaPlanilha" class="h-10 w-10">
+                <span class="text-2xl font-bold text-gray-900">SuaPlanilha</span>
+            </a>
+            <div class="hidden md:flex space-x-6 items-center">
+                <a href="#inicio" class="text-gray-600 hover:text-indigo-600 transition">Início</a>
+                <a href="#planilhas" class="text-gray-600 hover:text-indigo-600 transition">Nossas Planilhas</a>
+                <a href="#depoimentos" class="text-gray-600 hover:text-indigo-600 transition">Depoimentos</a>
+                <a href="#contato" class="text-gray-600 hover:text-indigo-600 transition">Contato</a>
+                <button id="cart-button" class="relative p-2 rounded-md hover:bg-gray-100 transition">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.182 1.701.705 1.701H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                    </svg>
+                    <span id="cart-count" class="absolute top-0 right-0 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-red-100 bg-red-600 rounded-full transform translate-x-1/2 -translate-y-1/2">0</span>
+                </button>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg py-2">
+            <a href="#inicio" class="block px-4 py-2 text-gray-800 hover:bg-gray-100 transition">Início</a>
+            <a href="#planilhas" class="block px-4 py-2 text-gray-800 hover:bg-gray-100 transition">Nossas Planilhas</a>
+            <a href="#depoimentos" class="block px-4 py-2 text-gray-800 hover:bg-gray-100 transition">Depoimentos</a>
+            <a href="#contato" class="block px-4 py-2 text-gray-800 hover:bg-gray-100 transition">Contato</a>
+            <button id="cart-button-mobile" class="w-full text-left px-4 py-2 text-gray-800 hover:bg-gray-100 transition">
+                Carrinho (<span id="cart-count-mobile">0</span>)
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Conteúdo Principal - Página Inicial -->
+        <div id="home-page">
+            <!-- Seção de Destaque -->
+            <section id="inicio" class="py-20 lg:py-32 bg-gray-50">
+                <div class="container mx-auto px-4 flex flex-col lg:flex-row items-center lg:space-x-12">
+                    <div class="lg:w-1/2 text-center lg:text-left mb-10 lg:mb-0">
+                        <h1 class="text-4xl lg:text-6xl font-extrabold leading-tight text-gray-900">
+                            Simplifique a Gestão da Sua Empresa.
+                            <span class="text-gradient">Aumente a Produtividade.</span>
+                        </h1>
+                        <p class="mt-4 text-lg lg:text-xl text-gray-600">
+                            Nossas planilhas profissionais oferecem ferramentas poderosas para controle financeiro, gestão de projetos, RH e muito mais.
+                        </p>
+                        <a href="#planilhas" class="mt-8 inline-block px-8 py-4 bg-indigo-600 text-white font-semibold rounded-full shadow-lg hover:bg-indigo-700 transition transform hover:scale-105">
+                            Conheça Nossas Soluções
+                        </a>
+                    </div>
+                    <div class="lg:w-1/2">
+                        <img src="https://placehold.co/600x400/E5E7EB/4B5563?text=Simplifique+sua+gestão" alt="Mockup de planilhas em um notebook e tablet" class="rounded-lg shadow-xl transform transition-transform duration-500 hover:scale-105">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Seção de Benefícios -->
+            <section class="py-16 lg:py-24 bg-white">
+                <div class="container mx-auto px-4 text-center">
+                    <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-12">Por que escolher nossas planilhas?</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                        <div class="p-6 bg-gray-50 rounded-lg shadow-md transition-shadow duration-300 hover:shadow-xl">
+                            <svg class="w-12 h-12 mx-auto text-indigo-600 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                            <h3 class="font-semibold text-xl mb-2">Aumente a Produtividade</h3>
+                            <p class="text-gray-600">Economize tempo com fórmulas automatizadas e dashboards intuitivos.</p>
+                        </div>
+                        <div class="p-6 bg-gray-50 rounded-lg shadow-md transition-shadow duration-300 hover:shadow-xl">
+                            <svg class="w-12 h-12 mx-auto text-indigo-600 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 2a2 2 0 002-2h6a2 2 0 002 2H9z"></path></svg>
+                            <h3 class="font-semibold text-xl mb-2">Controle Financeiro</h3>
+                            <p class="text-gray-600">Tenha uma visão clara das suas finanças com relatórios completos.</p>
+                        </div>
+                        <div class="p-6 bg-gray-50 rounded-lg shadow-md transition-shadow duration-300 hover:shadow-xl">
+                            <svg class="w-12 h-12 mx-auto text-indigo-600 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37-2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.568.342 1.258.117 1.724-.165z"></path></svg>
+                            <h3 class="font-semibold text-xl mb-2">Fácil de Usar</h3>
+                            <p class="text-gray-600">Projetadas para serem intuitivas, mesmo para quem não tem experiência avançada.</p>
+                        </div>
+                        <div class="p-6 bg-gray-50 rounded-lg shadow-md transition-shadow duration-300 hover:shadow-xl">
+                            <svg class="w-12 h-12 mx-auto text-indigo-600 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                            <h3 class="font-semibold text-xl mb-2">Tomada de Decisão</h3>
+                            <p class="text-gray-600">Transforme dados brutos em insights valiosos para o seu negócio.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Seção de Planilhas -->
+            <section id="planilhas" class="py-16 lg:py-24 bg-gray-50">
+                <div class="container mx-auto px-4 text-center">
+                    <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-12">Nossas Planilhas</h2>
+                    <p class="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+                        Explore nosso catálogo de planilhas prontas para usar e encontre a solução perfeita para as necessidades da sua empresa.
+                    </p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <!-- Produto 1 -->
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 cursor-pointer product-card" data-product="fluxo-caixa">
+                            <img src="https://placehold.co/600x400/10B981/ffffff?text=Fluxo+de+Caixa" alt="Planilha de Fluxo de Caixa" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <h3 class="font-bold text-xl mb-2">Controle de Fluxo de Caixa</h3>
+                                <p class="text-gray-600 text-sm mb-4">Gerencie entradas e saídas, visualize o saldo em tempo real e planeje o futuro financeiro.</p>
+                                <span class="text-lg font-bold text-indigo-600">R$ 99,00</span>
+                            </div>
+                        </div>
+                        <!-- Produto 2 -->
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 cursor-pointer product-card" data-product="gestao-projetos">
+                            <img src="https://placehold.co/600x400/F59E0B/ffffff?text=Gestão+de+Projetos" alt="Planilha de Gestão de Projetos" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <h3 class="font-bold text-xl mb-2">Gestão de Projetos Completa</h3>
+                                <p class="text-gray-600 text-sm mb-4">Acompanhe tarefas, prazos e recursos, garantindo a entrega no tempo certo.</p>
+                                <span class="text-lg font-bold text-indigo-600">R$ 149,00</span>
+                            </div>
+                        </div>
+                        <!-- Produto 3 -->
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 cursor-pointer product-card" data-product="rh">
+                            <img src="https://placehold.co/600x400/EF4444/ffffff?text=Recursos+Humanos" alt="Planilha de RH" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <h3 class="font-bold text-xl mb-2">Planilha de RH - Férias e Ponto</h3>
+                                <p class="text-gray-600 text-sm mb-4">Controle férias, faltas e banco de horas de forma simples e organizada.</p>
+                                <span class="text-lg font-bold text-indigo-600">R$ 79,00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Seção de Depoimentos -->
+            <section id="depoimentos" class="py-16 lg:py-24 bg-white">
+                <div class="container mx-auto px-4 text-center">
+                    <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-12">O que nossos clientes dizem</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                            <p class="italic text-gray-600">"As planilhas da SuaPlanilha revolucionaram nossa gestão. Ganhamos tempo e clareza para tomar decisões importantes."</p>
+                            <p class="mt-4 font-semibold text-gray-900">- João Silva, CEO da Empresa XYZ</p>
+                        </div>
+                        <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                            <p class="italic text-gray-600">"Um investimento que se pagou em poucos dias. O suporte é excelente e a qualidade das planilhas é inquestionável."</p>
+                            <p class="mt-4 font-semibold text-gray-900">- Maria Souza, Gerente Financeira da ABC Corp</p>
+                        </div>
+                        <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                            <p class="italic text-gray-600">"Finalmente uma solução simples e eficaz para controlar nosso RH. Recomendo a todos os empreendedores."</p>
+                            <p class="mt-4 font-semibold text-gray-900">- Pedro Oliveira, Fundador da Tech Solutions</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Seção de Contato -->
+            <section id="contato" class="py-16 lg:py-24 bg-gray-50">
+                <div class="container mx-auto px-4 text-center">
+                    <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Pronto para simplificar sua gestão?</h2>
+                    <form action=https://formspree.io/f/xkgveqnl method="POST"></form>
+                    <p class="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+                        Entre em contato conosco para saber mais ou tirar suas dúvidas. Estamos aqui para ajudar.
+                    </p>
+                    <form id="contact-form" class="max-w-xl mx-auto bg-white p-8 rounded-lg shadow-xl">
+                        <div class="mb-6">
+                            <label for="name" class="block text-left text-gray-700 font-medium mb-2">Nome Completo</label>
+                            <input action.post="name" type="text" id="name" name="name" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 transition" placeholder="Seu nome" required>
+                        </div>
+                        <div class="mb-6">
+                            <label for="email" class="block text-left text-gray-700 font-medium mb-2">Email</label>
+                            <input action.post="name" type="email" id="email" name="email" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 transition" placeholder="seu-email@exemplo.com" required>
+                        </div>
+                        <div class="mb-6">
+                            <label for="message" class="block text-left text-gray-700 font-medium mb-2">Mensagem</label>
+                            <textarea action.post="name" id="message" name="message" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 transition" placeholder="Descreva suas necessidades..." required></textarea>
+                        </div>
+                            <button type="submit" class="w-full px-6 py-3 bg-indigo-600 text-white font-semibold rounded-full shadow-lg hover:bg-indigo-700 transition transform hover:scale-105">
+                            Enviar Mensagem
+                            </button>                  
+                        <div id="status-message" class="mt-4 hidden text-sm font-medium"></div>
+                    </form>
+                </div>
+            </section>
+        </div>
+
+        <!-- Conteúdo das Páginas de Produto -->
+        <div id="product-pages" class="container mx-auto px-4 py-16 lg:py-24">
+            <!-- Página de Fluxo de Caixa -->
+            <div id="fluxo-caixa-page" class="product-page">
+                <button id="back-button-fluxo-caixa" class="px-4 py-2 bg-gray-200 text-gray-800 rounded-lg hover:bg-gray-300 mb-8 transition-transform transform hover:scale-105">
+                    &larr; Voltar
+                </button>
+                <div class="bg-white rounded-lg shadow-xl p-8 lg:p-12">
+                    <img src="https://placehold.co/800x500/10B981/ffffff?text=Planilha+de+Fluxo+de+Caixa+Detalhes" alt="Imagem detalhada da Planilha de Fluxo de Caixa" class="w-full rounded-lg mb-8">
+                    <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Controle de Fluxo de Caixa</h2>
+                    <p class="text-lg text-gray-600 mb-6">
+                        Nossa planilha de fluxo de caixa é a ferramenta essencial para qualquer negócio que busca clareza financeira. Com ela, você pode registrar todas as entradas e saídas de dinheiro, categorizar despesas e receitas, e visualizar o saldo atual e projetado de forma simples e intuitiva.
+                    </p>
+                    <h3 class="text-2xl font-semibold text-gray-800 mt-8 mb-4">Funcionalidades Principais:</h3>
+                    <ul class="list-disc list-inside space-y-2 text-gray-600">
+                        <li>Lançamento diário de receitas e despesas.</li>
+                        <li>Dashboard com gráficos e indicadores visuais.</li>
+                        <li>Relatórios mensais e anuais automatizados.</li>
+                        <li>Previsão de fluxo de caixa futuro.</li>
+                        <li>Compatível com Excel e Google Sheets.</li>
+                    </ul>
+                    <div class="mt-8 text-center">
+                        <span class="text-xl font-bold text-indigo-600">R$ 99,00</span>
+                        <button class="add-to-cart-button mt-4 px-8 py-4 bg-indigo-600 text-white font-semibold rounded-full shadow-lg hover:bg-indigo-700 transition transform hover:scale-105" data-product-id="fluxo-caixa">
+                            Adicionar ao Carrinho
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Página de Gestão de Projetos -->
+            <div id="gestao-projetos-page" class="product-page">
+                <button id="back-button-gestao-projetos" class="px-4 py-2 bg-gray-200 text-gray-800 rounded-lg hover:bg-gray-300 mb-8 transition-transform transform hover:scale-105">
+                    &larr; Voltar
+                </button>
+                <div class="bg-white rounded-lg shadow-xl p-8 lg:p-12">
+                    <img src="https://placehold.co/800x500/F59E0B/ffffff?text=Planilha+de+Gestão+de+Projetos+Detalhes" alt="Imagem detalhada da Planilha de Gestão de Projetos" class="w-full rounded-lg mb-8">
+                    <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Gestão de Projetos Completa</h2>
+                    <p class="text-lg text-gray-600 mb-6">
+                        Gerencie seus projetos com eficiência e garanta que cada etapa seja concluída no prazo. Nossa planilha de gestão de projetos permite que você defina tarefas, atribua responsáveis, acompanhe o progresso e identifique gargalos rapidamente.
+                    </p>
+                    <h3 class="text-2xl font-semibold text-gray-800 mt-8 mb-4">Funcionalidades Principais:</h3>
+                    <ul class="list-disc list-inside space-y-2 text-gray-600">
+                        <li>Diagrama de Gantt automatizado.</li>
+                        <li>Acompanhamento de tarefas por status e prioridade.</li>
+                        <li>Alocação de recursos e custos.</li>
+                        <li>Notificações de prazos vencidos.</li>
+                        <li>Modelos para diferentes tipos de projetos.</li>
+                    </ul>
+                    <div class="mt-8 text-center">
+                        <span class="text-xl font-bold text-indigo-600">R$ 149,00</span>
+                        <button class="add-to-cart-button mt-4 px-8 py-4 bg-indigo-600 text-white font-semibold rounded-full shadow-lg hover:bg-indigo-700 transition transform hover:scale-105" data-product-id="gestao-projetos">
+                            Adicionar ao Carrinho
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Página de RH -->
+            <div id="rh-page" class="product-page">
+                <button id="back-button-rh" class="px-4 py-2 bg-gray-200 text-gray-800 rounded-lg hover:bg-gray-300 mb-8 transition-transform transform hover:scale-105">
+                    &larr; Voltar
+                </button>
+                <div class="bg-white rounded-lg shadow-xl p-8 lg:p-12">
+                    <img src="https://placehold.co/800x500/EF4444/ffffff?text=Planilha+de+RH+Detalhes" alt="Imagem detalhada da Planilha de RH" class="w-full rounded-lg mb-8">
+                    <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Planilha de RH - Férias e Ponto</h2>
+                    <p class="text-lg text-gray-600 mb-6">
+                        Simplifique a gestão de recursos humanos da sua empresa. Esta planilha foi desenvolvida para ajudar você a controlar de forma eficiente o registro de ponto, dias de férias e licenças dos seus colaboradores, reduzindo erros e burocracia.
+                    </p>
+                    <h3 class="text-2xl font-semibold text-gray-800 mt-8 mb-4">Funcionalidades Principais:</h3>
+                    <ul class="list-disc list-inside space-y-2 text-gray-600">
+                        <li>Controle de banco de horas e horas extras.</li>
+                        <li>Registro de ausências e licenças.</li>
+                        <li>Cálculo de dias de férias disponíveis.</li>
+                        <li>Relatórios de RH para auditoria.</li>
+                        <li>Interface de fácil uso para pequenos e médios negócios.</li>
+                    </ul>
+                    <div class="mt-8 text-center">
+                        <span class="text-xl font-bold text-indigo-600">R$ 79,00</span>
+                        <button class="add-to-cart-button mt-4 px-8 py-4 bg-indigo-600 text-white font-semibold rounded-full shadow-lg hover:bg-indigo-700 transition transform hover:scale-105" data-product-id="rh">
+                            Adicionar ao Carrinho
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal do Carrinho -->
+    <div id="cart-modal-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-[100] hidden flex items-center justify-center">
+        <div id="cart-modal" class="bg-white rounded-lg shadow-xl p-8 max-w-lg w-full m-4 relative transform transition-transform duration-300 scale-95 opacity-0">
+            <button id="close-cart-modal" class="absolute top-4 right-4 text-gray-500 hover:text-gray-800">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+            <h2 class="text-2xl font-bold text-gray-900 mb-6 border-b pb-2">Seu Carrinho de Compras</h2>
+            <div id="cart-items" class="space-y-4">
+                <!-- Itens do carrinho serão inseridos aqui pelo JS -->
+            </div>
+            <div id="cart-summary" class="mt-6 border-t pt-4">
+                <div class="flex justify-between items-center text-xl font-bold">
+                    <span>Total:</span>
+                    <span id="cart-total">R$ 0,00</span>
+                </div>
+            </div>
+            <button id="checkout-button" class="w-full mt-6 px-6 py-3 bg-green-600 text-white font-semibold rounded-full shadow-lg hover:bg-green-700 transition transform hover:scale-105">
+                Finalizar Compra
+            </button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-10">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2025 Sua Empresa de Planilhas. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Dados dos produtos para facilitar a gestão
+        const products = {
+            "fluxo-caixa": {
+                id: "fluxo-caixa",
+                name: "Controle de Fluxo de Caixa",
+                price: 99.00
+            },
+            "gestao-projetos": {
+                id: "gestao-projetos",
+                name: "Gestão de Projetos Completa",
+                price: 149.00
+            },
+            "rh": {
+                id: "rh",
+                name: "Planilha de RH - Férias e Ponto",
+                price: 79.00
+            }
+        };
+
+        let cart = [];
+
+        // Lógica para o menu mobile
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const homeLink = document.getElementById('home-link');
+        const homePage = document.getElementById('home-page');
+        const productPages = document.getElementById('product-pages');
+        const productCards = document.querySelectorAll('.product-card');
+        const backButtons = document.querySelectorAll('[id^="back-button"]');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Lógica para o formulário de contato (simulado)
+        const contactForm = document.getElementById('contact-form');
+        const statusMessage = document.getElementById('status-message');
+
+        contactForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            statusMessage.classList.remove('hidden', 'text-green-600', 'text-red-600');
+            statusMessage.textContent = 'Enviando...';
+            statusMessage.classList.add('text-gray-500');
+
+            setTimeout(() => {
+                const isSuccess = Math.random() > 0.5; // Simula sucesso/falha
+                if (isSuccess) {
+                    statusMessage.textContent = 'Mensagem enviada com sucesso! Em breve entraremos em contato.';
+                    statusMessage.classList.remove('text-gray-500');
+                    statusMessage.classList.add('text-green-600');
+                    contactForm.reset();
+                } else {
+                    statusMessage.textContent = 'Ocorreu um erro ao enviar. Por favor, tente novamente.';
+                    statusMessage.classList.remove('text-gray-500');
+                    statusMessage.classList.add('text-red-600');
+                }
+                statusMessage.classList.remove('hidden');
+            }, 1500);
+        });
+
+        // Lógica para navegação entre páginas
+        function showHomePage() {
+            homePage.style.display = 'block';
+            productPages.style.display = 'none';
+        }
+
+        function showProductPage(productId) {
+            homePage.style.display = 'none';
+            productPages.style.display = 'block';
+            document.querySelectorAll('.product-page').forEach(page => {
+                page.style.display = 'none';
+            });
+            document.getElementById(`${productId}-page`).style.display = 'block';
+        }
+
+        // Event Listeners para navegação
+        homeLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            showHomePage();
+        });
+
+        productCards.forEach(card => {
+            card.addEventListener('click', () => {
+                const productId = card.dataset.product;
+                showProductPage(productId);
+            });
+        });
+
+        backButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                showHomePage();
+            });
+        });
+
+        // Lógica do carrinho de compras
+        const cartButton = document.getElementById('cart-button');
+        const cartButtonMobile = document.getElementById('cart-button-mobile');
+        const cartModalOverlay = document.getElementById('cart-modal-overlay');
+        const cartModal = document.getElementById('cart-modal');
+        const closeCartModalButton = document.getElementById('close-cart-modal');
+        const cartItemsContainer = document.getElementById('cart-items');
+        const cartTotalSpan = document.getElementById('cart-total');
+        const cartCountSpan = document.getElementById('cart-count');
+        const cartCountMobileSpan = document.getElementById('cart-count-mobile');
+        const addToCartButtons = document.querySelectorAll('.add-to-cart-button');
+
+        function saveCartToLocalStorage() {
+            localStorage.setItem('shoppingCart', JSON.stringify(cart));
+        }
+
+        function loadCartFromLocalStorage() {
+            const storedCart = localStorage.getItem('shoppingCart');
+            if (storedCart) {
+                cart = JSON.parse(storedCart);
+                updateCartDisplay();
+            }
+        }
+
+        function updateCartDisplay() {
+            cartItemsContainer.innerHTML = '';
+            let total = 0;
+            let totalItems = 0;
+
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = '<p class="text-gray-500 text-center">Seu carrinho está vazio.</p>';
+            } else {
+                cart.forEach(item => {
+                    const itemTotal = item.price * item.quantity;
+                    total += itemTotal;
+                    totalItems += item.quantity;
+
+                    const itemElement = document.createElement('div');
+                    itemElement.classList.add('flex', 'justify-between', 'items-center', 'border-b', 'pb-2');
+                    itemElement.innerHTML = `
+                        <div>
+                            <p class="font-semibold">${item.name}</p>
+                            <p class="text-sm text-gray-500">R$ ${item.price.toFixed(2)} x ${item.quantity}</p>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <span class="font-bold">R$ ${itemTotal.toFixed(2)}</span>
+                            <button class="remove-item-button text-red-500 hover:text-red-700" data-product-id="${item.id}">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                                </svg>
+                            </button>
+                        </div>
+                    `;
+                    cartItemsContainer.appendChild(itemElement);
+                });
+            }
+
+            cartTotalSpan.textContent = `R$ ${total.toFixed(2)}`;
+            cartCountSpan.textContent = totalItems;
+            cartCountMobileSpan.textContent = totalItems;
+            saveCartToLocalStorage();
+        }
+
+        function addToCart(productId) {
+            const existingItem = cart.find(item => item.id === productId);
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                const productToAdd = products[productId];
+                cart.push({ ...productToAdd, quantity: 1 });
+            }
+            updateCartDisplay();
+            toggleCartModal(true);
+        }
+
+        function removeFromCart(productId) {
+            const index = cart.findIndex(item => item.id === productId);
+            if (index !== -1) {
+                cart.splice(index, 1);
+                updateCartDisplay();
+            }
+        }
+
+        function toggleCartModal(show = false) {
+            if (show) {
+                cartModalOverlay.classList.remove('hidden');
+                setTimeout(() => {
+                    cartModal.classList.remove('scale-95', 'opacity-0');
+                    cartModal.classList.add('scale-100', 'opacity-100');
+                }, 10);
+            } else {
+                cartModal.classList.remove('scale-100', 'opacity-100');
+                cartModal.classList.add('scale-95', 'opacity-0');
+                setTimeout(() => {
+                    cartModalOverlay.classList.add('hidden');
+                }, 300);
+            }
+        }
+
+        // Event Listeners para o carrinho
+        cartButton.addEventListener('click', () => toggleCartModal(true));
+        cartButtonMobile.addEventListener('click', () => toggleCartModal(true));
+        closeCartModalButton.addEventListener('click', () => toggleCartModal(false));
+        cartModalOverlay.addEventListener('click', (e) => {
+            if (e.target.id === 'cart-modal-overlay') {
+                toggleCartModal(false);
+            }
+        });
+        addToCartButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                const productId = e.target.dataset.productId;
+                addToCart(productId);
+            });
+        });
+        cartItemsContainer.addEventListener('click', (e) => {
+            if (e.target.closest('.remove-item-button')) {
+                const productId = e.target.closest('.remove-item-button').dataset.productId;
+                removeFromCart(productId);
+            }
+        });
+
+        // Ação de checkout (simulada)
+        document.getElementById('checkout-button').addEventListener('click', () => {
+            if (cart.length > 0) {
+                alert('Obrigado pela sua compra! O checkout real seria processado aqui.');
+                cart = [];
+                updateCartDisplay();
+                toggleCartModal(false);
+            } else {
+                alert('Seu carrinho está vazio!');
+            }
+        });
+
+        // Exibe a página inicial por padrão e carrega o carrinho do localStorage
+        showHomePage();
+        loadCartFromLocalStorage();
+    </script>
+</body>
+</html>
